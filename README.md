@@ -1,3 +1,3 @@
 # pdo-mysql-pgsql-php
-Les muestro un ejemplo de un formulario donde uso la estructura MVC, método AJAX para guarar los datos y PDO para proteger nuestra Base de Datos de inyecciones SQL
+Les muestro un ejemplo de un formulario donde uso la estructura MVC, método AJAX para guarar los datos y PDO para proteger nuestra Base de Datos de inyecciones SQL. Así mismo uso de MySql, pgsql de PostgreSql y PHP como lenguaje backend.
 Tienes ahí la base de datos que he usado para ele jemplo, la base se llama bdusuario que solo tiene una tabla "Usuario", para ello no olvides revisar el archivo que se encuentra en la carpeta datos/configuracion.php; este archivo contiene todas las variables útiles para la conexión, cámbialos acorde a tus datos propios. Tendrás que ver también el tema del PDO, en algunos casos viene desactivactiva en apache y tienes que activarlo, pero si usas por ejemplo Appserv en sus últimas versiones ya viene con PDO activado, gracias.
