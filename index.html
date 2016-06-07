@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pdo-Mysql-PHP</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+	        <div class="col-sm-6 col-md-4 col-md-offset-4">
+	            <h1 class="text-center login-title">Registro</h1>
+	                <form class="form-signin" id="frm_registro">
+	                	<label for="nombres">Nombres</label>
+		                <input type="text" class="form-control" id="nombres" required autofocus>
+		                <label for="email">Email</label>
+		                <input type="email" class="form-control" id="email" required>
+		                <label for="clave">Clave</label>
+		                <input type="password" class="form-control" id="clave" required><br>
+		                <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                    Registrar</button>
+	                </form>
+	        </div>
+    	</div>
+	</div>
+	<script type="text/javascript">
+		$("#frm_registro").submit(function(event){
+			event.preventDefault();
+			var nombres = $("#nombres").val();
+			var email = $("#email").val();
+			var clave = $("#clave").val();
+			$.ajax({
+				method: 'POST',
+				url: "controlador/guardar-datos-usuario.php",
+				data:{nombres: nombres, email: email, clave: clave},
+				success: function(data){
+					if (data === "exito"){
+						alert('Registro correcto');
+						$("#nombres").val("");
+						$("#email").val("");
+						$("#clave").val("");
+					}
+					else
+						alert(data);
+				},
+				error: function(error){
+					alert(error.textResponse);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
